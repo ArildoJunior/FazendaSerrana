@@ -1,0 +1,42 @@
+﻿@model WebFazendaSerrana.Models.Praga
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Praga</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeCientifico)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NomeCientifico)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NomePopular)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NomePopular)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EstacaoAno)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EstacaoAno)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataUltimaPraga)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataUltimaPraga)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Codigo">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

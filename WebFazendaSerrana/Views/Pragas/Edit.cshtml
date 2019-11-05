@@ -1,0 +1,49 @@
+﻿@model WebFazendaSerrana.Models.Praga
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Praga</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Codigo" />
+            <div class="form-group">
+                <label asp-for="NomeCientifico" class="control-label"></label>
+                <input asp-for="NomeCientifico" class="form-control" />
+                <span asp-validation-for="NomeCientifico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomePopular" class="control-label"></label>
+                <input asp-for="NomePopular" class="form-control" />
+                <span asp-validation-for="NomePopular" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstacaoAno" class="control-label"></label>
+                <input asp-for="EstacaoAno" class="form-control" />
+                <span asp-validation-for="EstacaoAno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataUltimaPraga" class="control-label"></label>
+                <input asp-for="DataUltimaPraga" class="form-control" />
+                <span asp-validation-for="DataUltimaPraga" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

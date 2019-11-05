@@ -1,0 +1,41 @@
+﻿@model IEnumerable<WebFazendaSerrana.Models.AuxiliarAgrotoxico>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Agrotoxico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Praga)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Agrotoxico.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Praga.NomePopular)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { CodigoAgrotoxico = item.CodigoAgrotoxico , CodigoPraga = item.CodigoPraga}) |
+                @Html.ActionLink("Details", "Details", new {CodigoAgrotoxico = item.CodigoAgrotoxico , CodigoPraga = item.CodigoPraga }) |
+                @Html.ActionLink("Delete", "Delete", new { CodigoAgrotoxico = item.CodigoAgrotoxico , CodigoPraga = item.CodigoPraga })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

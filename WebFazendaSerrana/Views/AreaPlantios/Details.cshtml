@@ -1,0 +1,48 @@
+﻿@model WebFazendaSerrana.Models.AreaPlantio
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AreaPlantio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tamanho)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tamanho)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Funcionario)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Funcionario.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPlantio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataPlantio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cultura)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cultura.Nome)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Numero">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

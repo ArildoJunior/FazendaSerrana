@@ -1,0 +1,55 @@
+﻿@model IEnumerable<WebFazendaSerrana.Models.TipoCultura>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cultura.Codigo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cultura.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Praga.Codigo)
+            </th>
+ 
+            <th>
+                @Html.DisplayNameFor(model => model.Praga.NomePopular)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoCultura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cultura.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoPraga)
+            </td>
+      
+            <td>
+                @Html.DisplayFor(modelItem => item.Praga.NomePopular)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { CodigoCultura = item.CodigoCultura, CodigoPraga = item.CodigoPraga}) |
+                @Html.ActionLink("Details", "Details", new { CodigoCultura = item.CodigoCultura, CodigoPraga = item.CodigoPraga }) |
+                @Html.ActionLink("Delete", "Delete", new { CodigoCultura = item.CodigoCultura, CodigoPraga = item.CodigoPraga })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

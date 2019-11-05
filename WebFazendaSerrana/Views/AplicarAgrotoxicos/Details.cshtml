@@ -1,0 +1,50 @@
+﻿@model WebFazendaSerrana.Models.AplicarAgrotoxico
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AplicarAgrotoxico</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AreaPlantio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AreaPlantio.Tamanho)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Agrotoxico)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Agrotoxico.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.QtdAplicado)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.QtdAplicado)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tipo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Praga)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Praga.NomePopular)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { IdAplicarAgrotoxico = Model.IdAplicarAgrotoxico }) |
+    @Html.ActionLink("Remover", "Delete", new { IdAplicarAgrotoxico = Model.IdAplicarAgrotoxico }) |
+
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,40 @@
+﻿@model WebFazendaSerrana.ViewModel.AuxiliarAgrotoxicoViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>AuxiliarAgrotoxico</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CodigoAgrotoxico" />
+            <input type="hidden" asp-for="CodigoPraga" />
+                        <div class="form-group">
+                <label asp-for="CodigoAgrotoxico" class="control-label"></label>
+                <select asp-for="SelecionadoKeysAgrotoxico" class="form-control" asp-items="ViewBag.CodigoAgrotoxico"></select>
+                <span asp-validation-for="SelecionadoKeysAgrotoxico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodigoPraga" class="control-label"></label>
+                <select asp-for="SelecionadoKeysPraga" class="form-control" asp-items="ViewBag.CodigoPraga"></select>
+                <span asp-validation-for="SelecionadoKeysPraga" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

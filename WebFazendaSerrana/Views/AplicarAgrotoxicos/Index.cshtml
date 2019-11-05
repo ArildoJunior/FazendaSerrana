@@ -1,0 +1,115 @@
+﻿@model IEnumerable<WebFazendaSerrana.Models.AplicarAgrotoxico>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<h3>Aplicações Preventivas</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AreaPlantio.DataPlantio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Praga)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtdAplicado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+            if (item.Tipo.Equals("PREVENTIVA"))
+            {
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AreaPlantio.DataPlantio)
+                    </td>
+   
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Praga.NomePopular)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.QtdAplicado)
+                    </td>
+
+                    
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { IdAplicarAgrotoxico = item.IdAplicarAgrotoxico }) |
+                        @Html.ActionLink("Details", "Details", new { IdAplicarAgrotoxico = item.IdAplicarAgrotoxico }) |
+                        @Html.ActionLink("Delete", "Delete", new { IdAplicarAgrotoxico = item.IdAplicarAgrotoxico })
+                    </td>
+                </tr>
+            }
+        }
+
+    </tbody>
+</table>
+
+<h3>Aplicações Corretivas</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AreaPlantio.DataPlantio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Praga)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtdAplicado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+            if (item.Tipo.Equals("CORRETIVA"))
+            {
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tipo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AreaPlantio.DataPlantio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Praga.NomePopular)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.QtdAplicado)
+                    </td>
+
+                    
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { IdAplicarAgrotoxico = item.IdAplicarAgrotoxico }) |
+                        @Html.ActionLink("Details", "Details", new { IdAplicarAgrotoxico = item.IdAplicarAgrotoxico }) |
+                        @Html.ActionLink("Delete", "Delete", new { IdAplicarAgrotoxico = item.IdAplicarAgrotoxico })
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

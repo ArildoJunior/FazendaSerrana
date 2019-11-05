@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WebFazendaSerrana.Models.Cultura>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TempoMaximo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MesIdeal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MesFinal)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TempoMaximo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MesIdeal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MesFinal)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Codigo">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Codigo">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Codigo">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
